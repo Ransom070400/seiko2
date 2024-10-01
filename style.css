@@ -1,0 +1,114 @@
+*{
+    padding: 0px;
+    margin: 0px;
+    box-sizing: border-box;
+}
+
+.header, nav{
+    background: #081825;
+   
+    width: 100%;
+    
+}
+ul li a:hover, .anchor-color:hover{
+    background: rgba(58, 162, 247, 0.2);
+    color: #fff;
+    border-radius: 4px;
+    
+}
+
+
+.links{
+    border: 1px solid #3AA2F7;
+     
+    text-align: center;
+    
+}
+
+.link{
+    background: #3AA2F7;
+    
+    text-align: center;
+    
+}
+.card-1{
+   border: 1px solid #3AA2F7;
+   padding: 12px 20px 25px 20px;
+    
+}
+
+.card-1:hover,  .card-2:hover{
+    background: rgba(58, 162, 247, 0.8);
+    color: #fff;
+}
+
+
+
+.text{
+    color: #3AA2F7;
+ 
+}
+
+
+.link-wallet{
+    background: #3AA2F7;
+    
+}
+
+.trust{
+    background: linear-gradient(to bottom, #1A2835 , #111827 40%, #111827  );
+    
+   width: 100%;
+}
+
+hr{
+    
+    background: #3AA2F7;
+    height: 2px;
+    border: none;
+    
+}
+
+
+/* Dashboard css*/
+.dash-link:hover{
+     background: rgba(58, 162, 247, 0.2);
+color: #000;
+   
+    
+}
+ .dash-link:active{
+     
+     background: rgba(58, 162, 247, 0.3);
+     
+ }
+  .input:focus{
+     
+        border-bottom: 1px solid #3AA2F7;
+   
+ }
+   label:focus{
+     
+        color:  #3AA2F7;
+   
+ }
+ 
+ 
+ 
+ 
+ 
+.dash-icon:hover {
+    color:#3AA2F7 ;
+    
+    
+}
+
+.dash-content{
+    background: rgba(58, 162, 247, 0.4);
+    height: 100%;
+}
+
+.dash-unique{
+    background: rgba(58, 162, 247, 0.4);
+    color: #3AA2F7;
+}
