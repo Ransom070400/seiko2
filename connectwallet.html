@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sui Move DApp</title>
+    <script src="https://unpkg.com/@mysten/sui.js"></script>
+</head>
+<body>
+    <h1>Sui Move Smart Contract Integration</h1>
+    <button id="connectWallet">Connect Wallet</button>
+    <button id="executeContract">Execute Contract</button>
+
+    <script>
+        const { JsonRpcProvider, testnetConnection } = window.sui;
+        const provider = new JsonRpcProvider(testnetConnection);
+
+        let wallet = null;
+
+        // Connect Sui Wallet
+        document.getElementById('connectWallet').onclick = async () => {
+            try {
+                if (window.suiWallet) {
+                    wallet = await window.suiWallet.connect();
+                    alert("Wallet connected: " + wallet.accounts[0]);
+                } else {
+                    alert("Please install Sui Wallet.");
+                }
+            } catch (error) {
+                console.error(error);
+            }
+        };
+
+        // Execute a smart contract function
+        document.getElementById('executeContract').onclick = async () => {
+            if (!wallet) {
+                alert("Please connect your wallet first.");
+                return;
+            }
+
+            try {
+                const tx = {
+                    packageObjectId: '0x...your_package_address...',  // Replace with the deployed package address
+                    module: 'your_module',  // The Move module containing the function
+                    function: 'your_function',  // The function to call
+                    arguments: [],  // Any arguments your function requires
+                    gasBudget: 900000000 MIST   ,
+                };
+
+                const result = await wallet.executeMoveCall(tx);
+                console.log('Transaction result:', result);
+                alert('Contract executed! Transaction ID: ' + result.txId);
+            } catch (error) {
+                console.error(error);
+            }
+        };
+    </script>
+</body>
+</html>
